@@ -24,8 +24,14 @@ export class OperationsComponent {
 
   calculate(): void {
     try {
-      this.displayValue = eval(this.displayValue);
+      const result = eval(this.displayValue);
+      if (result === Infinity || result === -Infinity) {
+        this.displayValue = 'Infinity';
+      } else {
+        this.displayValue = result.toString();
+      }
     } catch (error) {
+      // Handle calculation error if necessary
       console.error(error);
     }
   }
