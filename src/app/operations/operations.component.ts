@@ -13,7 +13,9 @@ export class OperationsComponent {
   }
 
   setOperator(operator: string): void {
-    this.displayValue += operator;
+    if (!this.displayValue.includes('+') || this.displayValue.includes('-') || this.displayValue.includes('*') || this.displayValue.includes('/') || this.displayValue.includes('%')) {
+      this.displayValue += operator;
+    }
   }
 
   appendDecimal(): void {
@@ -27,15 +29,14 @@ export class OperationsComponent {
       const result = eval(this.displayValue);
       if (result === Infinity || result === -Infinity) {
         this.displayValue = 'Infinity';
-      } else {
+      }
+      else {
         this.displayValue = result.toString();
       }
     } catch (error) {
-      // Handle calculation error if necessary
       console.error(error);
     }
   }
-
   clear(): void {
     this.displayValue = '';
   }
@@ -57,7 +58,8 @@ export class OperationsComponent {
       this.appendDecimal();
     } else if (key === '+' || key === '-' || key === '*' || key === '/') {
       this.setOperator(key);
-    } else if (key === 'Enter') {
+    }
+    else if (key === 'Enter') {
       this.onEnter();
     } else if (key === 'Backspace') {
       this.onBackspace();
