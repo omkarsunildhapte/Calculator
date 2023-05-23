@@ -1,0 +1,22 @@
+.footer {
+  padding: 10px;
+  align-items: center;
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  background-image: linear-gradient(
+    to right top,
+    #d61583,
+    #c92e9c,
+    #b642b3,
+    #9c53c6,
+    #7b62d5,
+    #6177e5,
+    #4189f1,
+    #009af9,
+    #00b6ff,
+    #00cfff,
+    #00e6fa,
+    #5ffbf1
+  );
+}

@@ -41,36 +41,7 @@ button {
   background: #6177e5;
   font-weight: 700;
 }
-.spacer {
-  flex: 1 1 auto;
-}
-a {
-  text-decoration: none;
-  padding: 12px 20px;
-  color: cornflowerblue;
-}
-.footer {
-  padding: 10px;
-  text-align: center;
-  position: absolute;
-  bottom: 0%;
-  width: 100%;
-  background-image: linear-gradient(
-    to right top,
-    #d61583,
-    #c92e9c,
-    #b642b3,
-    #9c53c6,
-    #7b62d5,
-    #6177e5,
-    #4189f1,
-    #009af9,
-    #00b6ff,
-    #00cfff,
-    #00e6fa,
-    #5ffbf1
-  );
-}
+
 .row button {
   margin-bottom: 5px;
 }

@@ -1,0 +1,53 @@
+.spacer {
+  flex: 1 1 auto;
+}
+a {
+  text-decoration: none;
+  padding: 12px 20px;
+  color: #fff;
+}
+a:hover {
+  color: #8d98d8;
+}
+.navigation {
+  display: block;
+}
+button {
+  background: transparent;
+  outline: none;
+  border: none;
+  display: none;
+}
+.show {
+  display: none;
+}
+
+mat-icon {
+  font-size: 32px;
+  overflow: auto !important;
+}
+@media only screen and (max-width: 560px) {
+  .navigation {
+    display: none; /* Hide the navigation by default */
+  }
+
+  .navigation.show {
+    display: grid;
+    position: absolute;
+    right: 0%;
+    background: #3f51b5;
+    top: 2%;
+    z-index: 1;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid;
+  }
+  button {
+    display: block;
+  }
+  .close-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+}
