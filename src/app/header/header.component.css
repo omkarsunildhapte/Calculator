@@ -24,7 +24,8 @@ button {
 
 mat-icon {
   font-size: 32px;
-  overflow: auto !important;
+  overflow: auto;
+  color: #fff;
 }
 @media only screen and (max-width: 560px) {
   .navigation {

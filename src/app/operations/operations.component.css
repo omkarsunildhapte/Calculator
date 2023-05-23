@@ -23,7 +23,7 @@ mat-card {
   height: 100px;
   overflow: hidden;
   margin-bottom: 10px;
-  width: 250px;
+  width: 100%;
   border-radius: 15px;
 }
 .row {
