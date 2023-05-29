@@ -1,42 +1,137 @@
 <div class="calculator">
-    <mat-card>
-        <div>
-            <mat-card-content>
-                <div class="display">
-                    <input matInput [(ngModel)]="displayValue" type="text" (keydown.enter)="onEnter()">
-                </div>
-                <div class="buttons">
-                    <div class="row">
-                        <button mat-raised-button color="primary" (click)="appendNumber('7')">7</button>
-                        <button mat-raised-button color="primary" (click)="appendNumber('8')">8</button>
-                        <button mat-raised-button color="primary" (click)="appendNumber('9')">9</button>
-                        <button mat-raised-button color="accent" (click)="setOperator('/')">/</button>
-                    </div>
-                    <div class="row">
-                        <button mat-raised-button color="primary" (click)="appendNumber('4')">4</button>
-                        <button mat-raised-button color="primary" (click)="appendNumber('5')">5</button>
-                        <button mat-raised-button color="primary" (click)="appendNumber('6')">6</button>
-                        <button mat-raised-button color="accent" (click)="setOperator('*')">*</button>
-                    </div>
-                    <div class="row">
-                        <button mat-raised-button color="primary" (click)="appendNumber('1')">1</button>
-                        <button mat-raised-button color="primary" (click)="appendNumber('2')">2</button>
-                        <button mat-raised-button color="primary" (click)="appendNumber('3')">3</button>
-                        <button mat-raised-button color="accent" (click)="setOperator('-')">-</button>
-                    </div>
-                    <div class="row">
-                        <button mat-raised-button color="primary" (click)="appendNumber('0')">0</button>
-                        <button mat-raised-button color="accent" (click)="appendDecimal()">.</button>
-                        <button mat-raised-button color="accent" (click)="calculate()">=</button>
-                        <button mat-raised-button color="accent" (click)="setOperator('+')">+</button>
-                    </div>
-                    <button mat-raised-button color="warn" (click)="clear()">C</button>
-                    <button mat-raised-button color="danger" (click)="onBackspace()">^</button>
-                </div>
-            </mat-card-content>
+  <mat-card>
+    <div>
+      <mat-card-content>
+        <div class="display">
+          <input
+            matInput
+            [(ngModel)]="displayValue"
+            type="text"
+            (keydown.enter)="onEnter()"
+          />
         </div>
-    </mat-card>
+        <div class="buttons">
+          <div class="row">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="appendNumber('7')"
+            >
+              7
+            </button>
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="appendNumber('8')"
+            >
+              8
+            </button>
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="appendNumber('9')"
+            >
+              9
+            </button>
+            <button mat-raised-button color="accent" (click)="setOperator('/')">
+              /
+            </button>
+          </div>
+          <div class="row">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="appendNumber('4')"
+            >
+              4
+            </button>
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="appendNumber('5')"
+            >
+              5
+            </button>
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="appendNumber('6')"
+            >
+              6
+            </button>
+            <button mat-raised-button color="accent" (click)="setOperator('*')">
+              *
+            </button>
+          </div>
+          <div class="row">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="appendNumber('1')"
+            >
+              1
+            </button>
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="appendNumber('2')"
+            >
+              2
+            </button>
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="appendNumber('3')"
+            >
+              3
+            </button>
+            <button mat-raised-button color="accent" (click)="setOperator('-')">
+              -
+            </button>
+          </div>
+          <div class="row">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="appendNumber('0')"
+            >
+              0
+            </button>
+            <button mat-raised-button color="accent" (click)="appendDecimal()">
+              .
+            </button>
+            <button mat-raised-button color="accent" (click)="calculate()">
+              =
+            </button>
+            <button mat-raised-button color="accent" (click)="setOperator('+')">
+              +
+            </button>
+          </div>
+          <button mat-raised-button color="warn" (click)="clear()">C</button>
+          <button mat-raised-button color="danger" (click)="onBackspace()">
+            X
+          </button>
+          <button
+            mat-raised-button
+            color="danger"
+            (click)="appendToCalculation('(')"
+          >
+            (
+          </button>
+          <button
+            mat-raised-button
+            color="danger"
+            (click)="appendToCalculation(')')"
+          >
+            )
+          </button>
+          <button mat-raised-button color="danger" (click)="handlePercentage()">
+            %
+          </button>
+        </div>
+      </mat-card-content>
+    </div>
+  </mat-card>
 </div>
-
 
 <router-outlet></router-outlet>
