@@ -40,12 +40,26 @@ export class OperationsComponent {
   clear(): void {
     this.displayValue = '';
   }
+  appendToCalculation(value: string) {
+    this.displayValue += value;
+  }
 
   onEnter(): void {
     this.calculate();
   }
   onBackspace(): void {
     this.displayValue = this.displayValue.slice(0, -1);
+  }
+  handlePercentage() {
+    if (this.displayValue) {
+      try {
+        const result = eval(this.displayValue);
+        const percentage = result / 100;
+        this.displayValue = percentage.toString();
+      } catch (error) {
+        console.error('Something Wrong', error);
+      }
+    }
   }
 
 
@@ -63,6 +77,9 @@ export class OperationsComponent {
       this.onEnter();
     } else if (key === 'Backspace') {
       this.onBackspace();
+    }
+    else if (key === '(' || key === ')') {
+      this.appendToCalculation(key)
     }
   }
 }
