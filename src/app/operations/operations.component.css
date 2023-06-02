@@ -2,8 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 55vh;
-  margin-top: 10%;
+  margin-top: 10px;
 }
 
 mat-card {
